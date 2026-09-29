@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шпаргалка созвона · Аркона × Ольга</title>
+<style>
+  :root{
+    --navy:#0E1B2C; --gold:#C8A24A; --paper:#F7F4EE; --line:#E3DCCB;
+    --ink:#211F1C; --muted:#6B6560; --ok:#1F7A4D;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:16px/1.55 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+       -webkit-text-size-adjust:100%}
+  header{position:sticky;top:0;z-index:5;background:var(--navy);color:#fff;padding:14px 16px 12px}
+  header h1{margin:0;font-size:19px;font-weight:600;letter-spacing:.1px}
+  header .sub{margin-top:4px;font-size:13px;color:#C9D2DD}
+  .bar{margin-top:10px;height:6px;border-radius:99px;background:#22334a;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .25s}
+  .bar-txt{margin-top:6px;font-size:12.5px;color:#C9D2DD}
+  main{max-width:760px;margin:0 auto;padding:16px 14px 64px}
+  .rules{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);
+         border-radius:8px;padding:12px 14px;margin:0 0 18px}
+  .rules b{display:block;margin-bottom:6px;font-size:14px;letter-spacing:.3px;color:var(--navy);text-transform:uppercase}
+  .rules ul{margin:0;padding-left:18px}
+  .rules li{margin:3px 0;font-size:15px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 14px 12px;margin:0 0 12px}
+  .step.done{opacity:.55}
+  .step h2{margin:0 0 2px;font-size:17px;color:var(--navy);display:flex;gap:8px;align-items:baseline}
+  .step h2 span.num{color:var(--gold);font-variant-numeric:tabular-nums}
+  .step .t{font-size:12.5px;color:var(--muted);margin:0 0 8px}
+  .goal{font-size:15px;margin:0 0 10px}
+  .say{margin:0;padding:0;list-style:none}
+  .say li{position:relative;margin:0 0 7px;padding-left:14px;font-size:15.5px;color:#111}
+  .say li:before{content:"«";position:absolute;left:0;color:var(--gold)}
+  .say li:after{content:"»";color:var(--gold)}
+  .cap{font-size:13.5px;color:var(--muted);margin:8px 0 0}
+  .cap b{color:var(--navy)}
+  label.tick{display:flex;gap:9px;align-items:center;margin-top:11px;padding-top:10px;
+             border-top:1px dashed var(--line);font-size:14px;color:var(--navy);cursor:pointer}
+  label.tick input{width:20px;height:20px;accent-color:var(--ok)}
+  .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px 14px;margin:0 0 12px}
+  .box h3{margin:0 0 8px;font-size:15px;color:var(--navy)}
+  .box ol,.box ul{margin:0;padding-left:20px}
+  .box li{margin:4px 0;font-size:15px}
+  .warn{border-left:4px solid #B3261E;background:#fff}
+  code{background:#F1EDE4;padding:1px 5px;border-radius:4px;font-size:13.5px}
+  a{color:#0E1B2C}
+  footer{max-width:760px;margin:0 auto;padding:0 14px 40px;font-size:13px;color:var(--muted)}
+  .reset{display:inline-block;margin-top:8px;font-size:13px;color:var(--muted);text-decoration:underline}
+</style>
+</head>
+<body>
+<header>
+  <h1>Шпаргалка созвона · Аркона × Ольга</h1>
+  <div class="sub">60 минут · идём шаг за шагом · отмечай пройденное галочкой</div>
+  <div class="bar"><i id="bar"></i></div>
+  <div class="bar-txt" id="barTxt">Пройдено 0 из 9 шагов</div>
+</header>
+
+<main>
+  <div class="rules">
+    <b>Четыре правила</b>
+    <ul>
+      <li><b>Не спорить.</b> Её слова — это данные, даже когда они неудобные.</li>
+      <li><b>Дословно.</b> Записываю её формулировки так, как она их сказала.</li>
+      <li><b>Исследование — не читать.</b> Факты — только если она спросит.</li>
+      <li><b>Не заканчивать без её формулировки.</b> Инсайт должен прозвучать из её рта.</li>
+    </ul>
+  </div>
+
+  <div class="box warn">
+    <h3>До звонка — 2 минуты</h3>
+    <ul>
+      <li>Tactiq: расширение открыто, язык <b>«Русский»</b> выставлен <b>ДО</b> начала — на середине звонка язык не пересчитывается.</li>
+      <li>Фраза-согласие, первым делом: «Оля, я запишу наш разговор — мне важно разобрать его потом, чтобы ничего не потерять. Хорошо?»</li>
+      <li>Экран: превью сайта открыто рядом — <a href="https://vizitka-preview-production.up.railway.app/">vizitka-preview-production.up.railway.app</a></li>
+    </ul>
+  </div>
+
+  <section class="step" data-i="0">
+    <h2><span class="num">0</span> Разогрев</h2>
+    <p class="t">5 минут</p>
+    <p class="goal">Реакция на то, что я присылал раньше: что откликнулось, что удивило.</p>
+    <ul class="say">
+      <li>Посмотрели то, что я присылал? Что откликнулось, что удивило?</li>
+      <li>Что из этого — совсем мимо?</li>
+    </ul>
+    <label class="tick"><input type="checkbox"> шаг пройден</label>
+  </section>
+
+  <section class="step" data-i="1">
+    <h2><span class="num">1</span> Её картина мира</h2>
+    <p class="t">5 минут</p>
+    <p class="goal">Почему недовольный клиент всё равно не уходит. Это <b>Z</b> — публичная версия, её надо записать и <b>не оспаривать</b>.</p>
+    <ul class="say">
+      <li>Почему клиент остаётся, даже когда работой недоволен?</li>
+      <li>Что он говорит, когда уходит? А что — когда остаётся?</li>
+    </ul>
+    <label class="tick"><input type="checkbox"> шаг пройден</label>
+  </section>
+
+  <section class="step" data-i="2">
+    <h2><span class="num">2</span> Три реальных случая</h2>
+    <p class="t">5 минут</p>
+    <p class="goal">Что клиенты <b>делали</b>, а не что говорили. Поведение — это <b>X</b>.</p>
+    <ul class="say">
+      <li>Вспомните троих: кто ушёл к другому бухгалтеру, кто сомневался и остался, кто просто остался.</li>
+      <li>Что каждый из них сделал — по шагам? Что сказал?</li>
+      <li>Кто-нибудь уходил, а потом возвращался?</li>
+    </ul>
+    <label class="tick"><input type="checkbox"> шаг пройден</label>
+  </section>
+
+  <section class="step" data-i="3">
+    <h2><span class="num">3</span> Снимаем поверхностные версии — её руками</h2>
+    <p class="t">10 минут</p>
+    <p class="goal">Она сама должна сказать «дело не в этом». Это не я опровергаю — это она проверяет.</p>
+    <ul class="say">
+      <li>Если бы первый месяц был бесплатным — это решило бы?</li>
+      <li>Если бы переход занимал десять минут — тогда бы уходили?</li>
+      <li>Если бы конкурент говорил по-русски и брал дешевле — в этом причина?</li>
+      <li>Что должно было бы случиться, чтобы клиент точно ушёл?</li>
+    </ul>
+    <label class="tick"><input type="checkbox"> шаг пройден</label>
+  </section>
+
+  <section class="step" data-i="4">
+    <h2><span class="num">4</span> Проекция в глубину</h2>
+    <p class="t">10 минут</p>
+    <p class="goal">Конкретный клиент в конкретный вечер. Никаких подсказок ответа — пауза после вопроса, дать договорить.</p>
+    <ul class="say">
+      <li>Вспомните конкретного клиента. Вечер, на почте письмо из налоговой — и он его не открывает. Что он в этот момент чувствует?</li>
+      <li>Что он думает о себе, когда подписывает документ, которого не понимает?</li>
+      <li>Кому он боится признаться, что не разбирается в своих бумагах?</li>
+      <li>Что хуже: переплатить 50 злотых или почувствовать себя дураком?</li>
+      <li>О чём он молчит, когда разговаривает с бухгалтером?</li>
+    </ul>
+    <label class="tick"><input type="checkbox"> шаг пройден</label>
+  </section>
+
+  <section class="step" data-i="5">
+    <h2><span class="num">5</span> Она называет мотив</h2>
+    <p class="t">5 минут</p>
+    <p class="goal">Момент инсайта. Здесь я молчу и записываю <b>дословно</b>.</p>
+    <ul class="say">
+      <li>Так что на самом деле происходит у него в голове?</li>
+      <li>Скажите это одной фразой — как есть.</li>
+    </ul>
+    <p class="cap"><b>Записать:</b> её фразу в кавычках, слово в слово. Это будущая формулировка инсайта.</p>
+    <label class="tick"><input type="checkbox"> шаг пройден</label>
+  </section>
+
+  <section class="step" data-i="6">
+    <h2><span class="num">6</span> Следствие для предложения</h2>
+    <p class="t">5 минут</p>
+    <p class="goal">Она сама выводит, что обещать в первую очередь. Обычно это безопасность и контроль, а не цена.</p>
+    <ul class="say">
+      <li>Если это правда — что нужно обещать клиенту в первую очередь?</li>
+      <li>Что должно быть на сайте первым экраном, чтобы он поверил?</li>
+      <li>А что мы обещать не должны, потому что это будет ложью?</li>
+    </ul>
+    <label class="tick"><input type="checkbox"> шаг пройден</label>
+  </section>
+
+  <section class="step" data-i="7">
+    <h2><span class="num">7</span> Закрытие</h2>
+    <p class="t">5 минут</p>
+    <p class="goal">Её резюме своими словами + договорённости. Благодарность — искренняя.</p>
+    <ul class="say">
+      <li>Соберите, пожалуйста, своими словами: в чём главная причина, по которой клиенты не уходят?</li>
+      <li>Что я делаю дальше, что вы делаете дальше — как вы это видите?</li>
+      <li>Оля, спасибо. Мне это правда важно.</li>
+    </ul>
+    <label class="tick"><input type="checkbox"> шаг пройден</label>
+  </section>
+
+  <div class="step" data-i="8">
+    <h2><span class="num">8</span> После звонка</h2>
+    <p class="t">5 минут у меня</p>
+    <p class="goal">Звонок не закончен, пока не сделан разбор.</p>
+    <ol>
+      <li>Экспорт транскрипта из Tactiq: <code>.txt</code>.</li>
+      <li>Аудио звонка — тоже сохранить.</li>
+      <li>Прислать мне оба файла сюда.</li>
+      <li>Я разбираю: её дословные фразы + карта страхов + формула инсайта → инсайт с проверками и сообщение для сайта.</li>
+    </ol>
+    <label class="tick"><input type="checkbox"> шаг пройден</label>
+  </div>
+
+  <footer>
+    Шпаргалка созвона Аркона × Ольга · подготовлена для Индры<br>
+    <a class="reset" href="#" onclick="localStorage.removeItem('olgaCall');location.reload();return false;">сбросить галочки</a>
+  </footer>
+</main>
+
+<script>
+  var KEY='olgaCall';
+  var state=JSON.parse(localStorage.getItem(KEY)||'{}');
+  var steps=[].slice.call(document.querySelectorAll('.step'));
+  function paint(){
+    var done=0;
+    steps.forEach(function(s,i){
+      var cb=s.querySelector('input[type=checkbox]');
+      cb.checked=!!state[i];
+      s.classList.toggle('done',!!state[i]);
+      if(state[i])done++;
+    });
+    document.getElementById('bar').style.width=(done/steps.length*100)+'%';
+    document.getElementById('barTxt').textContent='Пройдено '+done+' из '+steps.length+' шагов';
+  }
+  steps.forEach(function(s,i){
+    s.querySelector('input[type=checkbox]').addEventListener('change',function(e){
+      state[i]=e.target.checked; localStorage.setItem(KEY,JSON.stringify(state)); paint();
+    });
+  });
+  paint();
+</script>
+</body>
+</html>
